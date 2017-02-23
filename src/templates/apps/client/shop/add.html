@@ -1,0 +1,88 @@
+{% extends 'client_base.html' %}
+
+{% block content%}
+    <div id="client-shop-add">
+        <div class="h1">Добавление магазина</div>
+        <div class="pure-g">
+            <div class="pure-u-1-1">
+                <div id="client-shop-add-form-view" class="block-ful-x">
+                    <form id="add-shop-form" method="POST" action="/api/shop/create/" class="form-block">
+                        <div class="pure-g">
+                            <div class="pure-u-1-2 left-column">
+                                <label class="pure-g field-wrapper vertical-field">
+                                    <div class="pure-u-1-1 field-name">НАЗВАНИЕ МАГАЗИНА</div>
+                                    <div class="pure-u-1-1 field-value">
+                                        <input name="name" type="text" class="b_input_text" value="">
+                                    </div>
+                                </label>
+                                <label class="pure-g field-wrapper vertical-field">
+                                    <div class="pure-u-1-1 field-name">ЮРИДИЧЕСКОЕ ЛИЦО</div>
+                                    <div class="pure-u-1-1 field-value">
+                                        <input name="entity" type="text" class="b_input_text" value="">
+                                    </div>
+                                </label>
+                                <label class="pure-g field-wrapper vertical-field">
+                                    <div class="pure-u-1-1 field-name">ОГРН</div>
+                                    <div class="pure-u-1-1 field-value">
+                                        <input name="ogrn" type="text" class="b_input_text" value="">
+                                    </div>
+                                </label>
+                                <label class="pure-g field-wrapper vertical-field">
+                                    <div class="pure-u-1-1 field-name">ГОРОД</div>
+                                    <div class="pure-u-1-1 field-value">
+                                        <div class="select">
+                                            <select name="region">
+                                                <option></option>
+                                                {% for city in cities %}
+                                                    <option value="{{ city.id }}">{{ city.name }}</option>
+                                                {% endfor %}
+                                            </select>
+                                            <div class="overlay"></div>
+                                            <div class="select-wrapper">
+                                                <a href="#" class="current-value b_input_text"></a>
+                                                <ul>
+                                                    {% for city in cities %}
+                                                        <li><a href="#" data-value="{{ city.id }}" class="choice">{{ city.name }}</a></li>
+                                                    {% endfor %}
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="pure-u-1-2 right-column">
+                                <label class="pure-g field-wrapper vertical-field">
+                                    <div class="pure-u-1-1 field-name">ТЕЛЕФОН</div>
+                                    <div class="pure-u-1-1 field-value">
+                                        <input name="phone" type="text" class="b_input_text phone-mask" value="">
+                                    </div>
+                                </label>
+                                <label class="pure-g field-wrapper vertical-field">
+                                    <div class="pure-u-1-1 field-name">АДРЕС</div>
+                                    <div class="pure-u-1-1 field-value">
+                                        <input name="address" type="text" class="b_input_text" value="">
+                                    </div>
+                                </label>
+                                <label class="pure-g field-wrapper vertical-field">
+                                    <div class="pure-u-1-1 field-name">САЙТ</div>
+                                    <div class="pure-u-1-1 field-value">
+                                        <input name="site" type="text" class="b_input_text" value="">
+                                    </div>
+                                </label>
+                                <label class="pure-g field-wrapper vertical-field">
+                                    <div class="pure-u-1-1 field-name">URL ДЛЯ ПОЛУЧЕНИЯ YML-ФАЙЛА</div>
+                                    <div class="pure-u-1-1 field-value">
+                                        <input name="yml_url" type="text" class="b_input_text" value="">
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="pure-u-1-1 form-footer">
+                                <button type="submit" class="btn btn-purple">ДОБАВИТЬ</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

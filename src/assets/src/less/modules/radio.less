@@ -1,0 +1,37 @@
+label.radio {
+    position: relative;
+    padding-left: 29px;
+    line-height: 57px;
+
+    &:before {
+        .icon-radio-empty;
+        content: '';
+        position: absolute;
+        left: 0;
+        top: -2px;
+    }
+
+    &.selected {
+        &:before {
+            .icon-radio-selected;
+        }
+    }
+
+    &.purple {
+        &:before {
+            .icon-radio-empty-purple;
+            content: '';
+            position: absolute;
+            left: 0;
+            top: -2px;
+        }
+
+        &.selected:before {
+            .icon-radio-purple-selected;
+        }
+    }
+
+    input[type="radio"] {
+        display: none;
+    }
+}

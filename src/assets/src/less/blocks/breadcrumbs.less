@@ -1,0 +1,35 @@
+#block-breadcrumbs {
+    position: relative;
+    margin-top: -20px;
+
+    li {
+        display: inline-block;
+        position: relative;
+        padding: 0 18px 0 0px;
+
+        &:after {
+            content: '>';
+            position: absolute;
+            right: 4px;
+            color: #919191;
+        }
+
+        &:last-child {
+            &:after {
+                display: none;
+            }
+        }
+
+        &:first-child {
+            padding-left: 0;
+        }
+    }
+
+    span, a {
+        color: #919191;
+    }
+
+    a:hover {
+        color: #2B303A;
+    }
+}

@@ -1,0 +1,24 @@
+label.checkbox {
+    position: relative;
+    padding-left: 25px;
+    line-height: 1.5;
+
+
+    &:before {
+        .icon-checkbox-empty;
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 1px;
+    }
+
+    &.checked {
+        &:before {
+            .icon-checkbox-checked;
+        }
+    }
+
+    input[type="checkbox"] {
+        display: none;
+    }
+}
